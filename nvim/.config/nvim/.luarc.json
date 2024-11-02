@@ -1,0 +1,9 @@
+{
+    "diagnostics.globals": [
+        "map",
+        "vim"
+    ],
+    "diagnostics.disable": [
+        "unknown-diag-code"
+    ]
+}
