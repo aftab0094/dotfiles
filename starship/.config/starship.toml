@@ -1,39 +1,15 @@
-format = """$directory [](#41455c)$fill$memory_usage$cmd_duration$git_branch$fill[](#41455c) $time
-$character"""
+format = """$python$directory$character"""
 
-[directory]
-format = "[$path](#845cfa)"
+right_format = """$memory_usage"""
 
-[cmd_duration]
-min_time = 0
-format = "[    $duration  ](bg:#01106e fg:#51875c)"
-show_notifications = true
-min_time_to_notify = 120_000
-
-[fill]
-symbol = " "
-style = "bg:#41455c"
-
-[hostname]
-ssh_only = false
-format = "$hostname"
-ssh_symbol = "🌐"
-
-[username]
-format = "$user"
+add_newline = false
+continuation_prompt = '▶▶ '
 
 [memory_usage]
 disabled = false
 threshold = 0
-style = "bg:#019417"
-format = "[  $symbol$ram_pct  ]($style bold white)"
 symbol = "󰍛 "
 
-[time]
-disabled = false
-time_format = "%T"
-style="fg:#546570 bg:#2e2e4f"
-format = "[  󰔛 $time  ]($style)"
-
-[git_branch]
-format = "[  󰊢 $branch  ](bg:#f1502f)"
+[python]
+style = "#3776AB"
+format = "$virualenv"

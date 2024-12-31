@@ -9,7 +9,7 @@ return {
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
-					statusline = {"Avante", "AvanteInput", "toggleterm"},
+					statusline = { "Avante", "AvanteInput", "toggleterm", "NvimTree", "dashboard" },
 					winbar = {},
 				},
 				ignore_focus = {},

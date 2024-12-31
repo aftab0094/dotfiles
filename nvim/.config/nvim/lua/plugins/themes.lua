@@ -11,7 +11,7 @@ return {
 				--     light = "latte",
 				--     dark = "mocha",
 				-- },
-				transparent_background = false, -- disables setting the background color.
+				transparent_background = true, -- disables setting the background color.
 				show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
 				term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
 				dim_inactive = {
@@ -54,80 +54,8 @@ return {
 				},
 			})
 
-			vim.cmd.colorscheme "catppuccin"
+			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 
-	-- tokyodark
-	{
-		"tiagovla/tokyodark.nvim",
-		opts = {
-			-- custom options here
-			transparent_background = false, -- set background to transparent
-			gamma = 1.00, -- adjust the brightness of the theme
-			styles = {
-				comments = { italic = true }, -- style for comments
-				keywords = { italic = true }, -- style for keywords
-				identifiers = { italic = true }, -- style for identifiers
-				functions = {}, -- style for functions
-				variables = {}, -- style for variables
-			},
-			custom_highlights = {} or function(highlights, palette)
-				return {}
-			end, -- extend highlights
-			custom_palette = {} or function(palette)
-				return {}
-			end, -- extend palette
-			terminal_colors = false, -- enable terminal colorstok
-		},
-		config = function(_, opts)
-			require("tokyodark").setup(opts) -- calling setup is optional
-			-- vim.cmd([[colorscheme tokyodark]])
-		end,
-	},
-
-	{
-		"navarasu/onedark.nvim",
-		config = function()
-			require("onedark").setup({
-				-- Main options --
-				style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-				transparent = true, -- Show/hide background
-				term_colors = false, -- Change terminal color as per the selected theme style
-				ending_tildes = true, -- Show the end-of-buffer tildes. By default they are hidden
-				cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-
-				-- toggle theme style ---
-				toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-				toggle_style_list = {}, -- {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
-
-				-- Change code style ---
-				-- Options are italic, bold, underline, none
-				-- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
-				code_style = {
-					comments = "italic",
-					keywords = "none",
-					functions = "none",
-					strings = "none",
-					variables = "none",
-				},
-
-				-- Lualine options --
-				lualine = {
-					transparent = false, -- lualine center bar transparency
-				},
-
-				-- Custom Highlights --
-				colors = {}, -- Override default colors
-				highlights = {}, -- Override highlight groups
-
-				-- Plugins Config --
-				diagnostics = {
-					darker = true, -- darker colors for diagnostic
-					undercurl = true, -- use undercurl instead of underline for diagnostics
-					background = true, -- use background color for virtual text
-				},
-			})
-		end,
-	},
 }
